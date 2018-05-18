@@ -1,15 +1,4 @@
-@font-face {
-    font-family: Avenir;
-    src: url("../fonts/Avenir/AvenirLTStd-Book.otf") format("opentype");
-}
-// @font-face {
-//     font-family: Aleo Light;
-//     src: url("../fonts/Aleo/Aleo-Light.otf") format("opentype");
-// }
-@font-face {
-    font-family: Aleo;
-    src: url("../fonts/Aleo/Aleo-Regular.otf") format("opentype");
-}
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
 
 html {
   overflow-x: hidden;
@@ -38,18 +27,39 @@ html {
 
 
 body {
-  font-size: 1.8rem;
-  font-family: Avenir;
+  font-size: 1.6rem;
   line-height: 1.5;
+  font-weight: $font-normal;
   overflow-x: hidden !important;
+  font-family: 'Raleway', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  font-family: Aleo;
-  font-weight: bold;
+  font-weight: $font-bold;
+  font-family: 'Raleway', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   line-height: 1.5;
+}
+
+h1 {
+  font-size: 5.4rem;
+  font-weight: $font-black;
+}
+
+h2 {
+  font-size: 4rem;
+  font-weight: $font-black;
+}
+
+a {
+  color: $red;
+  font-weight: $font-bold;
+  &:hover {
+    color: $red;
+    text-decoration: none;
+    filter: brightness(120%);
+  }
 }

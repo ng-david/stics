@@ -1,8 +1,13 @@
 {
-  "name": "bitcamp-site-2018",
+  "name": "stics",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.9.0",
+    "nodemon": "^1.17.4"
+  },
+  "devDependencies": {},
   "scripts": {
     "server": "node server.js",
     "build-scss": "node-sass --include-path scss scss/main.scss css/main.css",
@@ -10,17 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitcamp/bitcamp-site-2018.git"
+    "url": "git+https://github.com/ng-david/stics.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bitcamp/bitcamp-site-2018/issues"
+    "url": "https://github.com/ng-david/stics/issues"
   },
-  "homepage": "https://github.com/bitcamp/bitcamp-site-2018#readme",
-  "dependencies": {
-    "connect": "^3.6.5",
-    "node-sass": "^4.7.2",
-    "serve-static": "^1.13.1"
-  }
+  "homepage": "https://github.com/ng-david/stics#readme"
 }
