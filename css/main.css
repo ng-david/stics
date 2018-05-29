@@ -48,10 +48,13 @@ a {
     text-decoration: none;
     filter: brightness(120%); }
 
-article.section, article.home-intro, article.home-info, article.footer {
+article.section, article.home-intro, article.home-info, article.catalog, article.contact {
   padding-top: 8rem;
   padding-bottom: 8rem;
   background-color: white; }
+
+strong {
+  font-weight: bold; }
 
 @keyframes fade-in {
   from {
@@ -79,19 +82,30 @@ a.button {
   background-color: #888888;
   padding: 1rem 2.8rem;
   color: white;
-  transition: ease background-color .3s;
+  border-radius: 4px;
+  transition: ease filter .3s;
   display: inline-block;
-  font-weight: 900; }
+  font-weight: bold; }
   a.button.button-red {
     background-color: #D95444; }
   a.button:hover {
     text-decoration: none;
     filter: brightness(120%); }
+  a.button:active {
+    text-decoration: none;
+    filter: brightness(80%); }
 
 article.nav {
   padding-top: 2rem; }
   article.nav img.logo {
     height: 5rem; }
+  article.nav .logo-link {
+    transition: ease all .3s; }
+    article.nav .logo-link:hover {
+      filter: none;
+      opacity: .7; }
+    article.nav .logo-link:active {
+      filter: none; }
   article.nav ul {
     padding-left: 0;
     list-style: none;
@@ -115,25 +129,13 @@ article.nav {
       margin-left: 0rem;
       flex: 1; }
 
-article.hero h1.animate, article.hero p.animate, article.hero a.button.animate {
-  opacity: 0;
-  position: relative;
-  animation: jump-in .5s 1;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease; }
-
 article.hero {
   position: relative;
   padding: 14rem 1.5rem 16rem; }
   article.hero h1, article.hero h3 {
     margin-bottom: 2rem; }
-  article.hero h1 {
-    opacity: 0; }
   article.hero p {
-    opacity: 0;
     margin-bottom: 4rem; }
-    article.hero p.animate {
-      animation-delay: .2s; }
   article.hero h3 {
     font-size: 1.6rem;
     font-weight: 900;
@@ -144,17 +146,12 @@ article.hero {
     z-index: -1;
     bottom: -8rem;
     right: -2rem;
-    opacity: 0; }
-    article.hero img.apple-bg.animate {
-      animation: apple-bg .5s 1;
-      animation-delay: .4s;
-      animation-timing-function: ease;
-      animation-fill-mode: forwards; }
+    opacity: .2; }
   article.hero a.button {
-    opacity: 0;
     margin-right: 1rem; }
-    article.hero a.button.animate {
-      animation-delay: .3s; }
+
+article.subpage-hero {
+  padding: 14rem 1.5rem 0rem; }
 
 article.home-intro {
   background-color: #D95444;
@@ -178,25 +175,51 @@ span.divider {
 article.home-info p {
   margin-bottom: 8rem; }
 
-article.footer {
+article.top {
+  -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1); }
+
+article.bottom div.class {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #e3e3e3; }
+
+article.catalog .search-input {
+  font-weight: bold;
+  background-color: white;
+  border-radius: 0px;
+  border: none;
+  transition: ease border-color .3s;
+  border-bottom: 2px solid #e3e3e3;
+  padding-bottom: 1rem;
+  width: 100%; }
+  article.catalog .search-input:hover {
+    border-color: #808080; }
+  article.catalog .search-input:active, article.catalog .search-input:focus {
+    outline: none;
+    border-color: #000000; }
+
+article.contact {
   background-color: #D95444;
   color: white; }
-  article.footer span.info {
+  article.contact .divider {
+    background-color: white; }
+  article.contact p {
     font-size: 2rem;
-    margin-left: 2rem; }
-  article.footer p {
-    margin-bottom: 4rem; }
-  article.footer img {
-    width: 1.5rem;
-    fill: white; }
+    margin-bottom: 4rem;
+    margin-top: 2rem; }
+  article.contact img {
+    height: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem; }
 
-.cover {
-  background-color: #D95444;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  z-index: 100000;
-  transition: ease all 1s; }
-  .cover.hide {
-    height: 0; }
+article.footer {
+  background-color: black;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center; }
+  article.footer p {
+    margin: 0;
+    color: white;
+    opacity: .6; }
