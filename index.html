@@ -37,21 +37,21 @@
   </article>
 
   <article class="hero">
-    <img class="apple-bg" src="./img/red-apple.svg" alt="">
+    <img id="apple" class="apple-bg" src="./img/red-apple.svg" alt="">
     <div class="container">
       <div class="row">
         <div class="col-md-8">
           <h3>University of Maryland</h3>
-          <h1>Design, develop, & teach your own course today.</h1>
+          <h1 id="title">Design, develop, & teach your own course today.</h1>
           <div class="row">
             <div class="col-md-8">
-              <p>
+              <p id="subtitle">
                 The Student Initated Courses (STICs) program helps students lead their own courses, built by students, built for students.
               </p>
             </div>
           </div>
-          <a class="button button-red" href="#">apply now &rarr;</a>
-          <a class="button" href="#">view catalog</a>
+          <a id="btn1" class="button button-red" href="#">apply now &rarr;</a>
+          <a id="btn2" class="button" href="#">view catalog</a>
         </div>
       </div>
 
@@ -107,6 +107,16 @@
       <img src="./img/fb.svg" alt="">
     </div>
   </article>
+  <script>
+    window.onload = function() {
+      document.getElementById('title').className = 'animate';
+      document.getElementById('subtitle').className = 'animate';
+      document.getElementById('btn1').classList.add("animate")
+      document.getElementById('btn2').classList.add("animate")
+      document.getElementById('apple').classList.add("animate")
+
+    };
+  </script>
 </body>
 
 

@@ -74,11 +74,17 @@ article.hero {
     margin-bottom: 2rem;
   }
   h1 {
-    @extend %jump-in;
+    opacity: 0;
+    &.animate {
+      @extend %jump-in;
+    }
   }
   p {
-    @extend %jump-in;
-    animation-delay: .2s;
+    opacity: 0;
+    &.animate {
+      animation-delay: .2s;
+      @extend %jump-in;
+    }
     margin-bottom: 4rem;
   }
   h3 {
@@ -88,20 +94,25 @@ article.hero {
     text-transform: uppercase;
   }
   img.apple-bg {
-    animation: apple-bg .5s 1;
-    animation-delay: .4s;
-    animation-timing-function: ease;
-    animation-fill-mode: forwards;
     position: absolute;
     z-index: -1;
     bottom: -8rem;
     right: -2rem;
     opacity: 0;
+    &.animate {
+      animation: apple-bg .5s 1;
+      animation-delay: .4s;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
   }
   a.button {
-    @extend %jump-in;
+    opacity: 0;
+    &.animate {
+      animation-delay: .3s;
+      @extend %jump-in;
+    }
     margin-right: 1rem;
-    animation-delay: .3s;
   }
 }
 
