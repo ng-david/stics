@@ -12,6 +12,10 @@
 
 <body>
 
+  <div class="cover" id="cover">
+
+  </div>
+
   <article class="nav">
     <div class="container">
       <ul>
@@ -109,12 +113,12 @@
   </article>
   <script>
     window.onload = function() {
+      document.getElementById('cover').classList.add("hide")
       document.getElementById('title').className = 'animate';
       document.getElementById('subtitle').className = 'animate';
       document.getElementById('btn1').classList.add("animate")
       document.getElementById('btn2').classList.add("animate")
       document.getElementById('apple').classList.add("animate")
-
     };
   </script>
 </body>

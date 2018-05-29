@@ -164,3 +164,17 @@ article.footer {
     fill: white;
   }
 }
+
+.cover {
+  background-color: $red;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 100000;
+  transition: ease all 1s;
+  &.hide {
+    height: 0;
+    // opacity: 0;
+  }
+}

@@ -189,3 +189,14 @@ article.footer {
   article.footer img {
     width: 1.5rem;
     fill: white; }
+
+.cover {
+  background-color: #D95444;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 100000;
+  transition: ease all 1s; }
+  .cover.hide {
+    height: 0; }
