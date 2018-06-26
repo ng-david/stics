@@ -21,9 +21,9 @@
                 <img class="logo" src="./img/logo.svg" alt="STICs">
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="./index.html">about</a>
-            </li>
+            </li> -->
             <li>
               <a class="active" href="./catalog.html">catalog</a>
             </li>
@@ -34,7 +34,7 @@
               <a href="#contact">contact</a>
             </li>
             <li>
-              <a class="red" href="/apply.html">apply now &rarr;</a>
+              <a class="red" href="./apply.html">apply now &rarr;</a>
             </li>
           </ul>
       </article>
@@ -151,27 +151,6 @@
         <p>© Copyright 2018 STICs UMD</p>
       </article>
   </article>
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  <script>
-    window.onscroll = function() {myFunction()};
-
-    const catalogSettings = document.getElementById("catalogSettings");
-    const catalogHeight = catalogSettings.clientHeight;
-    const sticky = catalogSettings.offsetTop;
-
-    function myFunction() {
-      if (window.pageYOffset >= sticky) {
-        catalogSettings.classList.add("sticky");
-        $("#classes").css("padding-top", catalogHeight);
-      } else {
-        catalogSettings.classList.remove("sticky");
-        $("#classes").css("padding-top", 0);
-      }
-    }
-  </script>
 </body>
 
 

@@ -4,7 +4,7 @@
 
 a.button {
   background-color: $grey;
-  padding: 1rem 2.8rem;
+  padding: 1rem 2.4rem;
   color: white;
   border-radius: 4px;
   transition: ease filter .3s;
@@ -179,6 +179,13 @@ article.home-info {
   @extend article.section;
   p {
     margin-bottom: 8rem;
+  }
+}
+
+article.faq {
+  @extend article.section;
+  p, ul {
+    margin-bottom: 4rem;
   }
 }
 
