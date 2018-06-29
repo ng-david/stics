@@ -1,6 +1,6 @@
 $("document").ready(function() {
-  initializeSemestersDropdown();
-  update(CURRENT_SEMESTER);
+    initializeSemestersDropdown();
+    update(CURRENT_SEMESTER);
 });
 
 $(document).on('click', 'a.semester-option', function(e) {
