@@ -48,7 +48,7 @@
       <article id="catalogSettings" class="catalog-settings">
         <div class="container">
           <div class="header">
-            <input class="search-input" type="text" name="search" value="" placeholder="Filter by course code (e.g. artt)">
+            <input id="catalog" class="search-input" type="text" name="search" value="" placeholder="Filter by course code (e.g. artt)">
             <div class="options">
               <div class="tags">
                 <a class="button button-red s">view all</a>
@@ -59,21 +59,18 @@
                 <a class="button s">math</a>
               </div>
               <div class="dropdown">
-                <a class="dropbtn button button-red caret">fall 2018</a>
-                <div class="dropdown-content">
-                  <a href="#">spring 2018</a>
-                  <a href="#">fall 2017</a>
-                  <a href="#">spring 2017</a>
-                </div>
+                <a id="selectedSemester" class="dropbtn button button-red caret"></a>
+                <div id="semesters" class="dropdown-content"></div>
               </div>
             </div>
           </div>
         </div>
       </article>
     </article>
+    <!-- <div id="displayedCourses"></div> -->
 
     <article id="classes" class="bottom classes">
-      <div class="container">
+      <div id="displayedCourses" class="container">
         <div class="row class">
           <div class="col-4">
             <h2>ARTT489Z</h2>
@@ -151,6 +148,8 @@
         <p>© Copyright 2018 STICs UMD</p>
       </article>
   </article>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript " src="./js/catalog.js "></script>
 </body>
 
 
