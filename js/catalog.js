@@ -65,6 +65,7 @@ function createDiv(cl) {
             <p>${getFacilitatorsText(cl.facilitators)}</p> \
             <p>${getAdvisorText(cl.advisor)}</p> \
             ${(cl.website == undefined) ? "" : `<a target="_blank" href="${cl.website}">Website</a><br>`} \
+            <a target="_blank" href="${cl.syllabus}">Testudo</a> | \
             <a target="_blank" href="${cl.syllabus}">Syllabus</a> \
           </div> \
           <div class="col-8">
