@@ -164,7 +164,7 @@ var CURRENT_SEMESTER = "fall 2018";
 
 var CLASSES = {
   classes: {
-    spring 2017: {
+    'spring 2017': {
       departments: ["CMSC"],
       classes: [
         {
@@ -187,7 +187,7 @@ var CLASSES = {
         }
       ]
     },
-    fall 2017: {
+    'fall 2017': {
       departments: ["CMSC", "MATH", "BMGT", "ENSP", "MUSC"],
       classes: [
         {
@@ -320,7 +320,7 @@ var CLASSES = {
         }
       ]
     },
-    spring 2018: {
+    'spring 2018': {
       departments: ["CMSC", "MATH", "BMGT", "ENSP", "MUSC"],
       classes: [
         {
@@ -612,7 +612,7 @@ var CLASSES = {
         }
       ]
     },
-    fall 2018: {
+    'fall 2018': {
       departments: ["CMSC"],
       classes: [
         {
