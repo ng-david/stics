@@ -111,7 +111,7 @@ article.nav {
 article.hero {
   // background-color: black;
   position: relative;
-  padding: 14rem 1.5rem 16rem;
+  padding: 14rem 0rem 16rem;
   h1, h3 {
     margin-bottom: 2rem;
   }
@@ -153,11 +153,24 @@ article.hero {
     // }
     margin-right: 1rem;
   }
+  @media (max-width: 767.98px) {
+    padding: 12rem 0rem 12rem;
+    img.apple-bg {
+      position: absolute;
+      z-index: -1;
+      bottom: -8rem;
+      left: -8rem;
+      right: auto;
+      opacity: .1;
+    }
+  }
 }
 
 article.subpage-hero {
   padding: 14rem 0rem 0rem;
-
+  @media (max-width: 767.98px) {
+    padding: 8rem 0rem 0rem;
+  }
 }
 
 article.home-intro {
@@ -323,6 +336,7 @@ article.catalog {
 
       .dropdown:hover .dropdown-content {
           display: block;
+          z-index: 99;
       }
 
       .dropdown:hover .dropbtn {

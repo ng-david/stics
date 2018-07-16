@@ -153,7 +153,7 @@ article.nav {
 
 article.hero {
   position: relative;
-  padding: 14rem 1.5rem 16rem; }
+  padding: 14rem 0rem 16rem; }
   article.hero h1, article.hero h3 {
     margin-bottom: 2rem; }
   article.hero p {
@@ -171,9 +171,22 @@ article.hero {
     opacity: .2; }
   article.hero a.button, article.hero article.catalog article.catalog-settings .search-input, article.catalog article.catalog-settings article.hero .search-input {
     margin-right: 1rem; }
+  @media (max-width: 767.98px) {
+    article.hero {
+      padding: 12rem 0rem 12rem; }
+      article.hero img.apple-bg {
+        position: absolute;
+        z-index: -1;
+        bottom: -8rem;
+        left: -8rem;
+        right: auto;
+        opacity: .1; } }
 
 article.subpage-hero {
   padding: 14rem 0rem 0rem; }
+  @media (max-width: 767.98px) {
+    article.subpage-hero {
+      padding: 8rem 0rem 0rem; } }
 
 article.home-intro {
   background-color: #D95444;
@@ -283,7 +296,8 @@ article.catalog article.catalog-settings {
       color: white;
       filter: none; }
     article.catalog article.catalog-settings div.options .dropdown:hover .dropdown-content {
-      display: block; }
+      display: block;
+      z-index: 99; }
     article.catalog article.catalog-settings div.options .dropdown:hover .dropbtn {
       text-decoration: none;
       transform: none;
