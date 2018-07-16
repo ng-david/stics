@@ -89,11 +89,11 @@ a.button, article.catalog article.catalog-settings .search-input {
   z-index: 10;
   transition: all .15s ease;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08); }
-  a.button.button-red, article.catalog article.catalog-settings .button-red.search-input {
+  a.button.button-red, article.catalog article.catalog-settings .button-red.search-input, article.catalog article.catalog-settings div.options a.button.tag-option-selected, article.catalog article.catalog-settings div.options .tag-option-selected.search-input {
     border-color: #D95444;
     color: #ffffff;
     background-color: #D95444; }
-    a.button.button-red:hover, article.catalog article.catalog-settings .button-red.search-input:hover {
+    a.button.button-red:hover, article.catalog article.catalog-settings .button-red.search-input:hover, article.catalog article.catalog-settings div.options a.button.tag-option-selected:hover, article.catalog article.catalog-settings div.options .tag-option-selected.search-input:hover {
       color: #ffffff; }
   a.button:hover, article.catalog article.catalog-settings .search-input:hover {
     text-decoration: none;
@@ -251,7 +251,10 @@ article.catalog article.catalog-settings {
     article.catalog article.catalog-settings div.options .button {
       cursor: pointer;
       margin-bottom: 1rem;
-      margin-left: .4rem; }
+      margin-left: .4rem;
+      color: #D95444; }
+      article.catalog article.catalog-settings div.options .button.button-red, article.catalog article.catalog-settings div.options .button.tag-option-selected {
+        color: #ffffff; }
       article.catalog article.catalog-settings div.options .button:first-child {
         margin-left: 0rem; }
     article.catalog article.catalog-settings div.options .dropdown {

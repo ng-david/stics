@@ -276,6 +276,13 @@ article.catalog {
         cursor: pointer;
         margin-bottom: 1rem;
         margin-left: .4rem;
+        color: $red;
+        &.tag-option-selected {
+          @extend .button-red;
+        }
+        &.button-red {
+          color: $white;
+        }
         &:first-child {
           margin-left: 0rem;
         }

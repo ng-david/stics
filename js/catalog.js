@@ -20,12 +20,12 @@ $("#catalog-search").on("input", function(e) {
 $(document).on('click', 'a.tag-option', function(e) {
   if ($(this).attr("id") === "view-all") {
     $(".tag-option").each(function() {
-      $(this).removeClass("button-red");
+      $(this).removeClass("tag-option-selected");
     });
   } else {
-    $("#view-all").removeClass("button-red");
+    $("#view-all").removeClass("tag-option-selected");
   }
-  $(this).toggleClass("button-red");
+  $(this).toggleClass("tag-option-selected");
   update($('#selectedSemester').text());
 });
 
@@ -48,7 +48,7 @@ function initializeFilterTags() {
     $("#filter-tags").append(`<a class="button tag-option">${dept.toLowerCase()}</a>`)
   }
 
-  $("#view-all").addClass("button-red");
+  $("#view-all").addClass("tag-option-selected");
 }
 
 function initializeSemestersDropdown() {
@@ -61,7 +61,7 @@ function initializeSemestersDropdown() {
 function getSelectedTags() {
   const selectedTags = [];
   $(".tag-option").each(function() {
-    if ($(this).hasClass("button-red")) {
+    if ($(this).hasClass("tag-option-selected")) {
       selectedTags.push($(this).text())
     }
   })
@@ -86,7 +86,7 @@ function update(semester) {
   }
 
   let filteredByTags = [];
-  if ($("#view-all").hasClass("button-red")) {
+  if ($("#view-all").hasClass("tag-option-selected")) {
     filteredByTags = filteredBySearch;
   } else {
     for (const i in filteredBySearch) {
@@ -164,7 +164,7 @@ var CURRENT_SEMESTER = "fall 2018";
 
 var CLASSES = {
   classes: {
-    "spring 2017": {
+    spring 2017: {
       departments: ["CMSC"],
       classes: [
         {
@@ -180,14 +180,14 @@ var CLASSES = {
           credits: 1,
           description:
             "This course provides a comprehensive, practical introduction to modern full-stack web development using JavaScript and Node.js. The course will start with basic HTML/CSS/JavaScript. Then, we will move into Node.js and learn how to deploy a website from there. We will learn about Express.js (server-side development module) and MongoDB (database) in order to create a complete web application.",
-          syllabus: "https://github.com/UMD-CS-STICs/389Kspring17",
+          syllabus: "https://github.com/UMD-CS-STICs/389Kspring 2017",
           room: "CSIC1120",
           day: "Friday",
           time: "3-3:50 PM"
         }
       ]
     },
-    "fall 2017": {
+    fall 2017: {
       departments: ["CMSC", "MATH", "BMGT", "ENSP", "MUSC"],
       classes: [
         {
@@ -320,7 +320,7 @@ var CLASSES = {
         }
       ]
     },
-    "spring 2018": {
+    spring 2018: {
       departments: ["CMSC", "MATH", "BMGT", "ENSP", "MUSC"],
       classes: [
         {
@@ -612,7 +612,7 @@ var CLASSES = {
         }
       ]
     },
-    "fall 2018": {
+    fall 2018: {
       departments: ["CMSC"],
       classes: [
         {
@@ -760,7 +760,7 @@ var CLASSES = {
         {
           id: 30,
           department: "CMSC",
-          number: "398U",
+          number: "389U",
           title: "Introduction to Developing AR Applications with Hololens",
           facilitators: [
             { name: "John Ball", email: "jlball@terpmail.umd.edu" },
@@ -771,7 +771,7 @@ var CLASSES = {
           description:
             "A hands on, project driven introduction to developing Augmented Reality applications for devices like the Microsoft Hololens using the Microsoft Mixed Reality Toolkit and the Unity 3D engine. Topics will include AR design thinking, the Unity scripting API, deploying applications to Hololens, and the technology behind AR devices. Students will explore the capabilities of AR devices through bi-weekly projects designed to give them usable, valuable skills as quickly as possible. Basic programming and Unity experience, while not strictly required, are strongly recommended.",
           syllabus:
-            "./assets/syllabi/CMSC398U_F18.pdf",
+            "./assets/syllabi/CMSC389U_F18.pdf",
           room: "CSI1122",
           day: "Friday",
           time: "1 - 1:50 PM"
@@ -779,7 +779,7 @@ var CLASSES = {
         {
           id: 31,
           department: "CMSC",
-          number: "398F",
+          number: "389F",
           title: "Reinforcement Learning",
           facilitators: [
             { name: "Dhruv Mehta", email: "dhruvnm@umd.edu" },
@@ -790,7 +790,7 @@ var CLASSES = {
           description:
             "This course provides an overview of the key concepts and algorithms of Reinforcement Learning, an area of artificial intelligence research responsible for recent achievements such as AlphaGo and robotic control. Students will implement learning algorithms for simple tasks such as mazes and pong games.",
           syllabus:
-            "./assets/syllabi/CMSC398F_F18.pdf",
+            "./assets/syllabi/CMSC389F_F18.pdf",
           room: "EGR2116",
           day: "Friday",
           time: "2 PM - 2:50 PM"
@@ -798,7 +798,7 @@ var CLASSES = {
         {
           id: 31,
           department: "CMSC",
-          number: "398K",
+          number: "389K",
           title: "Full-stack Web Development with Node.js",
           facilitators: [
             { name: "Benny Cheng", email: "bcheng1996@gmail.com" },
