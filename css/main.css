@@ -119,6 +119,45 @@ a.button, article.catalog article.catalog-settings .search-input {
 
 article.nav {
   padding-top: 2rem; }
+  article.nav .hamburger {
+    position: relative;
+    z-index: 100; }
+    article.nav .hamburger span {
+      display: block;
+      width: 3.2rem;
+      height: 4px;
+      margin-bottom: 4px;
+      position: relative;
+      background: #D95444;
+      border-radius: 4px;
+      transition: ease all .3s; }
+    article.nav .hamburger:hover span {
+      opacity: .7; }
+  article.nav .hamburger-menu {
+    visibility: hidden;
+    width: 100vw;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: ease opacity .3s;
+    opacity: 0; }
+    article.nav .hamburger-menu.show {
+      visibility: visible;
+      position: fixed;
+      opacity: 1;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 99;
+      text-align: center;
+      padding-top: 33%; }
+      article.nav .hamburger-menu.show a {
+        color: white;
+        font-size: 4rem;
+        display: block; }
+        article.nav .hamburger-menu.show a:active, article.nav .hamburger-menu.show a:hover {
+          color: #D95444; }
   article.nav img.logo {
     height: 5rem; }
   article.nav .logo-link {

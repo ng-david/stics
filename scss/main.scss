@@ -52,9 +52,54 @@ a.button {
 
 article.nav {
   padding-top: 2rem;
+  .hamburger {
+    position: relative;
+    z-index: 100;
+    span {
+      display: block;
+      width: 3.2rem;
+      height: 4px;
+      margin-bottom: 4px;
+      position: relative;
+      background: $red;
+      border-radius: 4px;
+      transition: ease all .3s;
+    }
+    &:hover {
+      span {
+        opacity: .7;
+      }
+    }
+  }
+  .hamburger-menu {
+    visibility: hidden;
+    width: 100vw;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: ease opacity .3s;
+    opacity: 0;
+    &.show {
+      visibility: visible;
+      position: fixed;
+      opacity: 1;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, .8);
+      z-index: 99;
+      text-align: center;
+      padding-top: 33%;
+      a {
+        color: white;
+        font-size: 4rem;
+        display: block;
+        &:active, &:hover {
+          color: $red;
+        }
+      }
 
-  .container {
-
+    }
   }
   img.logo {
     height: 5rem;
