@@ -22,16 +22,16 @@
               </a>
             </li>
             <!-- <li>
-              <a href="./index.html">about</a>
+              <a class="active" href="./index.html">about</a>
             </li> -->
             <li>
-              <a class="active" href="./catalog.html">catalog</a>
+              <a href="./catalog.html">catalog</a>
             </li>
             <li>
               <a href="./faq.html">faq</a>
             </li>
             <li>
-              <a href="#contact">contact</a>
+              <a id="contact-link" href="#contact">contact</a>
             </li>
             <li>
               <a class="red" href="./apply.html">apply now &rarr;</a>
@@ -48,15 +48,11 @@
       <article id="catalogSettings" class="catalog-settings">
         <div class="container">
           <div class="header">
-            <input id="catalog" class="search-input" type="text" name="search" value="" placeholder="Filter by course code (e.g. artt)">
+            <input id="catalog-search" class="search-input" type="text" name="search" value="" placeholder="Filter by course code (e.g. artt)">
             <div class="options">
-              <div class="tags">
-                <a class="button button-red s">view all</a>
-                <a class="button s">artt</a>
-                <a class="button s">bsci</a>
-                <a class="button s">cmsc</a>
-                <a class="button s">idea</a>
-                <a class="button s">math</a>
+              <div class="tag-options">
+                <a id="view-all" class="button button-red tag-option">view all</a>
+                <span id="filter-tags"></span>
               </div>
               <div class="dropdown">
                 <a id="selectedSemester" class="dropbtn button button-red caret"></a>
@@ -94,6 +90,7 @@
   </article>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript " src="./js/catalog.js "></script>
+  <script type="text/javascript " src="./js/main.js "></script>
 </body>
 
 

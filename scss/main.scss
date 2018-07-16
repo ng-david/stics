@@ -3,23 +3,33 @@
 @import 'animation';
 
 a.button {
-  background-color: $grey;
-  padding: 1rem 2.4rem;
-  color: white;
-  border-radius: 4px;
-  transition: ease filter .3s;
+  background-color: white;
+  padding: 1.2rem 2.6rem;
+  color: $red;
+  border: 1px solid #f7f7f7;
+  border-radius: 10rem;
   display: inline-block;
   font-weight: $font-bold;
+  position: relative;
+  z-index: 10;
+  transition: all .15s ease;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
   &.button-red {
+    border-color: $red;
+    color: $white;
     background-color: $red;
+    &:hover {
+      color: $white;
+    }
   }
   &:hover {
     text-decoration: none;
-    filter: brightness(120%);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(50,50,93,.1);
   }
   &:active {
     text-decoration: none;
-    filter: brightness(80%);
+    filter: brightness(90%);
   }
   &.caret {
     padding-right: 3.6rem;
@@ -198,10 +208,11 @@ article.catalog {
   }
 
   article.bottom {
-    padding-bottom: 6rem;
+    padding-top: 2rem;
+    padding-bottom: 8rem - 2rem;
     div.class {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
       border-bottom: 1px solid #e3e3e3;
       p {
         margin-bottom: 0;
@@ -209,6 +220,9 @@ article.catalog {
       h2 {
         font-size: 2.6rem;
         margin-bottom: 1rem;
+      }
+      .class-num {
+        font-weight: 800;
       }
       .heading {
         font-weight: bold;
@@ -239,20 +253,19 @@ article.catalog {
       box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.1);
     }
     .search-input {
-      font-weight: $font-bold;
-      background-color: white;
-      border-radius: 0px;
-      border: none;
-      transition: ease border-color .3s;
-      border-bottom: 2px solid #e3e3e3;
-      padding-bottom: 1rem;
+      @extend a.button;
+      color: $black;
+      &:hover {
+        transform: none;
+      }
+      &:active {
+        filter: none;
+      }
       width: 100%;
       &:hover {
-        border-color: #808080;
       }
       &:active, &:focus {
         outline: none;
-        border-color: $black;
       }
     }
     div.options {
@@ -260,8 +273,12 @@ article.catalog {
       justify-content: space-between;
       padding-top: 2rem;
       .button {
-        color: white;
+        cursor: pointer;
         margin-bottom: 1rem;
+        margin-left: .4rem;
+        &:first-child {
+          margin-left: 0rem;
+        }
       }
 
       .dropdown {
@@ -303,6 +320,7 @@ article.catalog {
 
       .dropdown:hover .dropbtn {
         text-decoration: none;
+        transform: none;
         filter: brightness(80%);
       }
     }
@@ -316,6 +334,13 @@ article.contact {
   color: white;
   .divider {
     background-color: white;
+  }
+  a {
+    color: white;
+    transition: ease all .15s;
+    &:hover {
+      opacity: .6;
+    }
   }
   p {
     font-size: 2rem;

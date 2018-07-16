@@ -1,18 +1,55 @@
 $("document").ready(function() {
     initializeSemestersDropdown();
+    initializeFilterTags();
     update(CURRENT_SEMESTER);
 });
 
+// Written in this way so jQuery can see dynamically added elements
 $(document).on('click', 'a.semester-option', function(e) {
-  const newSemester = $(e.target).text();
-  update(newSemester);
+  const newSemester = $(this).text();
   $("#selectedSemester").text(newSemester)
-
+  initializeFilterTags();
+  update(newSemester);
 });
 
-$("#catalog").on("input", function(e) {
+$("#catalog-search").on("input", function(e) {
   update($('#selectedSemester').text());
 });
+
+// Written in this way so jQuery can see dynamically added elements
+$(document).on('click', 'a.tag-option', function(e) {
+  if ($(this).attr("id") === "view-all") {
+    $(".tag-option").each(function() {
+      $(this).removeClass("button-red");
+    });
+  } else {
+    $("#view-all").removeClass("button-red");
+  }
+  $(this).toggleClass("button-red");
+  update($('#selectedSemester').text());
+});
+
+function initializeFilterTags() {
+  $("#filter-tags").html('');
+  const semester = $("#selectedSemester").text();
+  const classes = CLASSES.classes[semester].classes;
+  const depts = new Set();
+  for (const course of classes) {
+    depts.add(course.department);
+  }
+
+  const sortedDepts = [];
+  for (const dept of depts) {
+    sortedDepts.push(dept);
+  }
+  sortedDepts.sort();
+
+  for (const dept of sortedDepts) {
+    $("#filter-tags").append(`<a class="button tag-option">${dept.toLowerCase()}</a>`)
+  }
+
+  $("#view-all").addClass("button-red");
+}
 
 function initializeSemestersDropdown() {
   for (semester of SEMESTERS) {
@@ -21,22 +58,61 @@ function initializeSemestersDropdown() {
   $("#selectedSemester").text(CURRENT_SEMESTER)
 }
 
+function getSelectedTags() {
+  const selectedTags = [];
+  $(".tag-option").each(function() {
+    if ($(this).hasClass("button-red")) {
+      selectedTags.push($(this).text())
+    }
+  })
+  return selectedTags;
+}
+
 function update(semester) {
-  var input = $("#catalog").val().toUpperCase();
-  var classesToDisplay = "";
-  var classes = CLASSES.classes[semester].classes;
-  var classArr = []
-  for (var i in classes) {
-    var course = classes[i];
-    var toTestStr = course.department + course.number;
-    if (toTestStr.indexOf(input) == 0 || input === "") {
-      classArr.push(createDiv(course));
+  const input = $("#catalog-search").val().toUpperCase();
+  const classes = CLASSES.classes[semester].classes;
+
+  let filteredBySearch = [];
+  if (input !== "") {
+    for (const i in classes) {
+      const course = classes[i];
+      const toTestStr = course.department + course.number;
+      if (toTestStr.indexOf(input) == 0) {
+        filteredBySearch.push(course);
+      }
+    }
+  } else {
+    filteredBySearch = classes;
+  }
+
+  let filteredByTags = [];
+  if ($("#view-all").hasClass("button-red")) {
+    filteredByTags = filteredBySearch;
+  } else {
+    for (const i in filteredBySearch) {
+      const course = filteredBySearch[i];
+      const toTestStr = course.department + course.number;
+      for (let tag of getSelectedTags()) {
+        tag = tag.toUpperCase();
+        if (toTestStr.indexOf(tag) == 0) {
+          filteredByTags.push(course);
+          break;
+        }
+      }
     }
   }
-  classArr.sort();
-  classesToDisplay = classArr.join('')
+
+  let classDivs = [];
+  for (const course of filteredByTags) {
+    classDivs.push(createDiv(course));
+  }
+  classDivs.sort();
+
+  let classesToDisplay = "";
+  classesToDisplay = classDivs.join('')
+
   if (classesToDisplay === "")
-    classesToDisplay = "No classes found with that course code.";
+    classesToDisplay = "No classes were found.";
   $("#displayedCourses").html(classesToDisplay);
 }
 
@@ -55,9 +131,18 @@ function getAdvisorText(a) {
 }
 
 function createDiv(cl) {
+  const className = cl.department + cl.number;
+  const selectedSemester = $('#selectedSemester').text();
+  const year = selectedSemester.substr(selectedSemester.length - 4);
+  const startMonth = (selectedSemester.substr(0, selectedSemester.length - 5) == "spring") ? "1" : "8";
+  const testudoUrl =
+  `
+    https://app.testudo.umd.edu/soc/search?courseId=${className}&sectionId=&termId=${year}0${startMonth}&_openSectionsOnly=on&creditCompare=&credits=&courseLevelFilter=ALL&instructor=&_facetoface=on&_blended=on&_online=on&courseStartCompare=&courseStartHour=&courseStartMin=&courseStartAM=&courseEndHour=&courseEndMin=&courseEndAM=&teachingCenter=ALL&_classDay1=on&_classDay2=on&_classDay3=on&_classDay4=on&_classDay5=on
+  `;
+
   return `<div class="row class"> \
           <div class="col-4"> \
-            <h2>${cl.department}${cl.number}</h2> \
+            <h2><a class="class-num" target="_blank" href="${testudoUrl}">${className}</a></h2> \
             <div class="heading"> \
               <p>${cl.title}</p> \
               <p>Credits: ${cl.credits}</p> \
@@ -65,7 +150,6 @@ function createDiv(cl) {
             <p>${getFacilitatorsText(cl.facilitators)}</p> \
             <p>${getAdvisorText(cl.advisor)}</p> \
             ${(cl.website == undefined) ? "" : `<a target="_blank" href="${cl.website}">Website</a><br>`} \
-            <a target="_blank" href="${cl.syllabus}">Testudo</a> | \
             <a target="_blank" href="${cl.syllabus}">Syllabus</a> \
           </div> \
           <div class="col-8">
