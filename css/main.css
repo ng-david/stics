@@ -44,8 +44,7 @@ a {
   color: #D95444;
   font-weight: bold; }
   a:hover {
-    color: #D95444;
-    text-decoration: none; }
+    color: #D95444; }
 
 article.section, article.home-intro, article.home-info, article.faq, article.contact {
   padding-top: 8rem;
@@ -87,7 +86,8 @@ a.button, article.catalog article.catalog-settings .search-input {
   font-weight: bold;
   position: relative;
   z-index: 10;
-  transition: all .15s ease;
+  transition: box-shadow .15s ease;
+  transition: transform .15s ease;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08); }
   a.button.button-red, article.catalog article.catalog-settings .button-red.search-input, article.catalog article.catalog-settings div.options a.button.tag-option-selected, article.catalog article.catalog-settings div.options .tag-option-selected.search-input {
     border-color: #D95444;
@@ -249,6 +249,11 @@ span.divider {
 article.home-info p {
   margin-bottom: 8rem; }
 
+article.home-info .image-row img {
+  width: 100%;
+  opacity: .1;
+  margin-bottom: 8rem; }
+
 article.faq p, article.faq ul {
   margin-bottom: 4rem; }
 
@@ -351,7 +356,8 @@ article.contact {
     color: white;
     transition: ease all .15s; }
     article.contact a:hover {
-      opacity: .6; }
+      opacity: .6;
+      text-decoration: none; }
   article.contact p {
     font-size: 2rem;
     margin-bottom: 4rem;

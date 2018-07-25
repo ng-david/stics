@@ -12,7 +12,8 @@ a.button {
   font-weight: $font-bold;
   position: relative;
   z-index: 10;
-  transition: all .15s ease;
+  transition: box-shadow .15s ease;
+  transition: transform .15s ease;
   box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
   &.button-red {
     border-color: $red;
@@ -248,6 +249,13 @@ article.home-info {
   p {
     margin-bottom: 8rem;
   }
+  .image-row {
+    img {
+      width: 100%;
+      opacity: .1;
+      margin-bottom: 8rem;
+    }
+  }
 }
 
 article.faq {
@@ -406,6 +414,7 @@ article.contact {
     transition: ease all .15s;
     &:hover {
       opacity: .6;
+      text-decoration: none;
     }
   }
   p {
