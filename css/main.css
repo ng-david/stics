@@ -249,10 +249,28 @@ span.divider {
 article.home-info p {
   margin-bottom: 8rem; }
 
+article.home-info .dept-row a {
+  opacity: .6; }
+  article.home-info .dept-row a img {
+    max-width: 90%;
+    max-height: 5rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    filter: grayscale(1);
+    transition: ease all .1s; }
+  article.home-info .dept-row a:hover {
+    opacity: 1; }
+    article.home-info .dept-row a:hover img {
+      filter: grayscale(0);
+      transform: scale(1.02); }
+
 article.home-info .image-row img {
   width: 100%;
-  opacity: .1;
-  margin-bottom: 8rem; }
+  border-radius: 2px;
+  margin-bottom: 8rem;
+  transition: ease all .1s; }
+  article.home-info .image-row img:hover {
+    transform: scale(1.02); }
 
 article.faq p, article.faq ul {
   margin-bottom: 4rem; }

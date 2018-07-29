@@ -249,11 +249,36 @@ article.home-info {
   p {
     margin-bottom: 8rem;
   }
+  .dept-row {
+    a {
+      opacity: .6;
+      img {
+        max-width: 90%;
+        max-height: 5rem;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        filter: grayscale(1);
+        transition: ease all .1s;
+      }
+      &:hover {
+        opacity: 1;
+        img {
+          filter: grayscale(0);
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
   .image-row {
     img {
       width: 100%;
-      opacity: .1;
+      // opacity: .1;
+      border-radius: 2px;
       margin-bottom: 8rem;
+      transition: ease all .1s;
+      &:hover {
+        transform: scale(1.02);
+      }
     }
   }
 }

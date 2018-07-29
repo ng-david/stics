@@ -1,7 +1,10 @@
+// Catalog broken in IE bc ES6 is used in this file.
+
 $("document").ready(function() {
     initializeSemestersDropdown();
     initializeFilterTags();
     update(CURRENT_SEMESTER);
+    initializeHashFragment();
 });
 
 // Written in this way so jQuery can see dynamically added elements
@@ -45,7 +48,8 @@ function initializeFilterTags() {
   sortedDepts.sort();
 
   for (const dept of sortedDepts) {
-    $("#filter-tags").append(`<a class="button tag-option">${dept.toLowerCase()}</a>`)
+    const deptName = dept.toLowerCase();
+    $("#filter-tags").append(`<a id="${deptName}-tag" class="button tag-option">${deptName}</a>`)
   }
 
   $("#view-all").addClass("tag-option-selected");
@@ -56,6 +60,17 @@ function initializeSemestersDropdown() {
     $("#semesters").prepend(`<a href="#" class="semester-option">${semester}</a>`);
   }
   $("#selectedSemester").text(CURRENT_SEMESTER)
+}
+
+function initializeHashFragment() {
+  if (window.location.hash) {
+    const hash = window.location.hash;
+    if ($(`${hash}-tag`).length) {
+      $(`${hash}-tag`).toggleClass("tag-option-selected"); // select it
+      $("#view-all").removeClass("tag-option-selected"); // deselect view all
+      update($('#selectedSemester').text());
+    }
+  }
 }
 
 function getSelectedTags() {
@@ -72,6 +87,7 @@ function update(semester) {
   const input = $("#catalog-search").val().toUpperCase();
   const classes = CLASSES.classes[semester].classes;
 
+  // Filter by search first
   let filteredBySearch = [];
   if (input !== "") {
     for (const i in classes) {
@@ -85,6 +101,7 @@ function update(semester) {
     filteredBySearch = classes;
   }
 
+  // Next filter by selected tags
   let filteredByTags = [];
   if ($("#view-all").hasClass("tag-option-selected")) {
     filteredByTags = filteredBySearch;
@@ -102,6 +119,7 @@ function update(semester) {
     }
   }
 
+  // Organize the classes to output
   let classDivs = [];
   for (const course of filteredByTags) {
     classDivs.push(createDiv(course));
