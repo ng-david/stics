@@ -275,6 +275,19 @@ article.home-info .image-row img {
 article.faq p, article.faq ul {
   margin-bottom: 4rem; }
 
+article.catalog .class {
+  opacity: 1;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: .35s; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 article.catalog article.top h1 {
   padding-bottom: 4rem; }
 
