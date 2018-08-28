@@ -942,6 +942,25 @@ var CLASSES = {
           day: "Monday",
           time: "3:30 PM - 4:45 PM"
         },
+        {
+          id: 38,
+          department: "AASP",
+          number: "299I",
+          title: "Introduction to Igbo",
+          facilitators: [
+            { name: "Chidera Nosiri", email: "cnosiri@terpmail.umd.edu" },
+            { name: "Janefrances Onyekonwu", email: "janeukas@gmail.com" },
+          ],
+          advisor: "Sangeetha Madhavan",
+          credits: 1,
+          description:
+            "From language to tradition, Elementary Igbo I provides insight into tradition, culture and their importance to Igbo language. Students will be provided with the tool set to read, write, and speak Igbo. This is part of the STIC (student initiated courses) program and will be taught by undergraduates under the supervision of a faculty advisor.",
+          syllabus:
+            "./assets/syllabi/AASP299I_F18.pdf",
+          room: "LEF1201",
+          day: "Monday",
+          time: "3:30 PM - 4:45 PM"
+        },
       ]
     },
   }
