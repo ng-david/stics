@@ -76,6 +76,11 @@ strong {
     bottom: -8rem;
     opacity: .2; } }
 
+.highlight {
+  padding: 4px;
+  border-radius: 2px;
+  background-color: #b7efc5; }
+
 a.button, article.catalog article.catalog-settings .search-input {
   background-color: white;
   padding: 1.2rem 2.6rem;
@@ -397,6 +402,11 @@ article.contact {
     height: 2rem;
     margin-right: 1rem;
     margin-left: 1rem; }
+
+article.apply {
+  padding-bottom: 6rem; }
+  article.apply p {
+    margin-bottom: 4rem; }
 
 article.footer {
   background-color: black;

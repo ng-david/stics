@@ -647,6 +647,7 @@ var CLASSES = {
           description:
             "This course presents a practical and project-oriented introduction to modern front end web development. Students will learn to design and build websites using technologies such as HTML, CSS, JS, Sass, Bootstrap, and Git.",
           syllabus: "./assets/syllabi/ARTT489Q_F18.pdf",
+          website: "http://stics.umd.edu/artt489q",
           room: "ASY3304",
           day: "Friday",
           time: "12 - 12:50 PM"

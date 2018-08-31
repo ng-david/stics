@@ -2,6 +2,12 @@
 @import 'base';
 @import 'animation';
 
+.highlight {
+  padding: 4px;
+  border-radius: 2px;
+  background-color: lighten($green, 20%);
+}
+
 a.button {
   background-color: white;
   padding: 1.2rem 2.6rem;
@@ -461,6 +467,13 @@ article.contact {
     height: 2rem;
     margin-right: 1rem;
     margin-left: 1rem;
+  }
+}
+
+article.apply {
+  padding-bottom: 6rem;
+  p {
+    margin-bottom: 4rem;
   }
 }
 
